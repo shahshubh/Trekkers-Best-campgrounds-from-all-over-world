@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trekkers</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+
+
+    </head>
+    <body>
+        <div class="container global-header">
+            <div class="row">
+                <div class="col-mid-12">
+                    <div id="content">
+                        <h1>Welcome to Trekkers</h1>
+                    <hr style="color: black">
+                    <a href="/campgrounds" class="btn btn-lg btn-info">View All Campgrounds<i class="fas fa-angle-double-right"></i></a>
+                    </div>	
+                </div>
+            </div>	
+        </div>
+
+        <script>
+            //Array of images which you want to show: Use path you want.
+            var images=new Array(
+                'https://images.unsplash.com/photo-1522439748419-3cd697a86028?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+                'https://images.unsplash.com/photo-1465695954255-a262b0f57b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+                'https://images.unsplash.com/photo-1515408320194-59643816c5b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+                'https://images.unsplash.com/photo-1504851149312-7a075b496cc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+            );
+            var nextimage=0;
+            doSlideshow();
+            
+            function doSlideshow(){
+                if(nextimage>=images.length){nextimage=0;}
+                $('body')
+                .css('background-image','url("'+images[nextimage++]+'")')
+                .fadeIn(500,function(){
+                    setTimeout(doSlideshow,4000);
+                });
+            }
+            </script>
+    </body>
+</html>
+    
